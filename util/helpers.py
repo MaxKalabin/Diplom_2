@@ -1,8 +1,7 @@
 import requests
-import random
-import string
-from test_data import BASE_URL, CREATE_USER_ENDPOINT, LOGIN_USER_ENDPOINT, USER_ENDPOINT, ORDER_ENDPOINT, \
-    INGREDIENTS_ENDPOINT, DOMAIN, DATA, ID, AUTHORIZATION, INGREDIENTS
+from test_data import AUTHORIZATION, INGREDIENTS
+from urls import BASE_URL, CREATE_USER_ENDPOINT, LOGIN_USER_ENDPOINT, USER_ENDPOINT, ORDER_ENDPOINT, \
+    INGREDIENTS_ENDPOINT
 
 
 #Запросы, использую что бы не делать сложные конструкции в запросах
@@ -17,7 +16,6 @@ def patch(path, payload=None, headers=None):
 
 def delete(path, payload=None, headers=None):
     return requests.delete(f"{BASE_URL}{path}", json=payload, headers=headers)
-
 
 #Ручки для работы с пользователями
 def create_user(payload):
@@ -48,22 +46,4 @@ def get_ingredients():
     return get(INGREDIENTS_ENDPOINT)
 
 
-#Генераторы данных
-def generate_email():
-    username = generate_text(string.ascii_lowercase + string.digits)
-    return f"{username}{DOMAIN}"
 
-def generate_password():
-    return generate_text(string.ascii_letters + string.digits)
-
-def generate_name():
-    return generate_text(string.ascii_letters)
-
-def generate_text(parameter, quantity=8):
-    return ''.join(random.choices(parameter, k=quantity))
-
-def generate_valid_hash_ingredients():
-    response = get_ingredients()
-    ingredients_data = response.json().get(DATA, [])
-    ingredient_hashes = [item[ID] for item in ingredients_data[:2]]
-    return ingredient_hashes

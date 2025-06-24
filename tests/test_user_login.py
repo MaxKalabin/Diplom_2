@@ -1,6 +1,6 @@
 import allure
 import pytest
-from helpers import login_user
+from util.helpers import login_user
 from test_data import STATUS_CODE_OK, INVALID_CREDENTIALS_MESSAGE, LOGIN_DATA, \
     STATUS_CODE_UNAUTHORIZED, ACCESS_TOKEN, MESSAGE
 

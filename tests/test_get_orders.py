@@ -1,5 +1,5 @@
 import allure
-from helpers import get_orders
+from util.helpers import get_orders
 from test_data import STATUS_CODE_OK, STATUS_CODE_UNAUTHORIZED, UNAUTHORIZED_MESSAGE, ORDER, MESSAGE
 
 @allure.feature("Получение заказов")

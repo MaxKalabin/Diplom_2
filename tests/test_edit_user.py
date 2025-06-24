@@ -1,6 +1,6 @@
 import allure
 import pytest
-from helpers import edit_user
+from util.helpers import edit_user
 from test_data import STATUS_CODE_OK, STATUS_CODE_UNAUTHORIZED, UNAUTHORIZED_MESSAGE, USER, MESSAGE, NEW_DATA, EDIT_DATA
 
 @allure.feature("Изменение данных пользователя")

@@ -1,14 +1,9 @@
 import allure
 import pytest
-from helpers import create_order, generate_valid_hash_ingredients
-from test_data import STATUS_CODE_OK, STATUS_CODE_BAD_REQUEST, \
-    INVALID_INGREDIENT_HASH, STATUS_CODE_INTERNAL_SERVER_ERROR
 
-INGREDIENTS_DATA = [
-    (generate_valid_hash_ingredients(), STATUS_CODE_OK),
-    ([], STATUS_CODE_BAD_REQUEST),
-    ([INVALID_INGREDIENT_HASH], STATUS_CODE_INTERNAL_SERVER_ERROR)
-]
+from util.data_generator import INGREDIENTS_DATA
+from util.helpers import create_order
+
 
 @allure.feature("Создание заказа")
 class TestOrderCreation:

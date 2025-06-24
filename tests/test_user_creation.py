@@ -1,8 +1,9 @@
 import allure
 import pytest
-from helpers import create_user
-from test_data import STATUS_CODE_OK, SUCCESS, STATUS_CODE_FORBIDDEN, MESSAGE, USER_ALREADY_EXISTS, USER_DATA, \
+from test_data import STATUS_CODE_OK, STATUS_CODE_FORBIDDEN, SUCCESS, MESSAGE, USER_ALREADY_EXISTS, USER_DATA, \
     REQUIRED_FIELDS_MESSAGE
+from util.helpers import create_user
+
 
 @allure.feature("Создание пользователя")
 class TestUserCreation:

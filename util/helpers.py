@@ -1,4 +1,5 @@
 import requests
+import json
 from test_data import AUTHORIZATION, INGREDIENTS
 from urls import BASE_URL, CREATE_USER_ENDPOINT, LOGIN_USER_ENDPOINT, USER_ENDPOINT, ORDER_ENDPOINT, \
     INGREDIENTS_ENDPOINT
@@ -43,5 +44,11 @@ def get_orders(token=None):
 def get_ingredients():
     return get(INGREDIENTS_ENDPOINT)
 
+#Обработка ответа для безопасного извлечения JSON из ответа (при 500 ошибках)
+def parse_json(response):
+    try:
+        return response.json()
+    except json.JSONDecodeError:
+        return {}
 
 

@@ -25,7 +25,7 @@ def generate_valid_hash_ingredients():
     return [item["_id"] for item in ingredients_data[:2]]
 
 INGREDIENTS_DATA = [
-    (generate_valid_hash_ingredients(), STATUS_CODE_OK),
-    ([], STATUS_CODE_BAD_REQUEST),
-    ([INVALID_INGREDIENT_HASH], STATUS_CODE_INTERNAL_SERVER_ERROR)
+    (generate_valid_hash_ingredients(), STATUS_CODE_OK, "name, order, number", True),
+    ([], STATUS_CODE_BAD_REQUEST, "Ingredient ids must be provided", False),
+    ([INVALID_INGREDIENT_HASH], STATUS_CODE_INTERNAL_SERVER_ERROR, None, None)
 ]

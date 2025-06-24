@@ -3,7 +3,6 @@ from test_data import AUTHORIZATION, INGREDIENTS
 from urls import BASE_URL, CREATE_USER_ENDPOINT, LOGIN_USER_ENDPOINT, USER_ENDPOINT, ORDER_ENDPOINT, \
     INGREDIENTS_ENDPOINT
 
-
 #Запросы, использую что бы не делать сложные конструкции в запросах
 def get(path, headers=None):
     return requests.get(f"{BASE_URL}{path}", headers=headers)
@@ -31,7 +30,6 @@ def edit_user(payload, token=None):
 def delete_user(token):
     headers = {AUTHORIZATION: token}
     return delete(USER_ENDPOINT, headers=headers)
-
 
 #Ручки для работы с заказами
 def create_order(ingredients, token=None):

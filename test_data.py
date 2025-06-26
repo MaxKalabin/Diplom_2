@@ -13,6 +13,10 @@ STATUS_CODE_INTERNAL_SERVER_ERROR = 500
 
 # Хеши ингредиентов
 INVALID_INGREDIENT_HASH = "invalidhash123"
+INGREDIENTS_ERRORS = [
+    ([], STATUS_CODE_BAD_REQUEST, "Ingredient ids must be provided", False),
+    ([INVALID_INGREDIENT_HASH], STATUS_CODE_INTERNAL_SERVER_ERROR, None, None)
+]
 
 #Данные для параметризации
 USER_DATA = ["email", "password", "name"]
@@ -23,12 +27,17 @@ EDIT_DATA = ["email", "name"]
 NEW_DATA = 'new_data'
 USER = 'user'
 MESSAGE = 'message'
-ORDER = 'orders'
+ORDERS = 'orders'
 SUCCESS = 'success'
 DOMAIN = "@example.com"
 AUTHORIZATION = "Authorization"
 INGREDIENTS = "ingredients"
 ACCESS_TOKEN = "accessToken"
+REFRESH_TOKEN = "refreshToken"
 EMAIL = "email"
 PASSWORD = "password"
 NAME = "name"
+ORDER = "order"
+NUMBER = "number"
+TOTAL = "total"
+TOTAL_TODAY = "totalToday"

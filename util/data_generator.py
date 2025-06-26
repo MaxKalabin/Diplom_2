@@ -1,8 +1,7 @@
 import random
 import string
 import requests
-from test_data import DOMAIN, STATUS_CODE_OK, STATUS_CODE_BAD_REQUEST, INVALID_INGREDIENT_HASH, \
-    STATUS_CODE_INTERNAL_SERVER_ERROR
+from test_data import DOMAIN
 from urls import BASE_URL
 
 #Генераторы данных
